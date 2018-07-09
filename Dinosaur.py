@@ -21,6 +21,7 @@ def subset(length):
         sequences.append(seq)
     return(sequences)
 
+# length of the characters you want the model to learn from
 sequences = subset(4)
 
 enc = []
@@ -46,7 +47,9 @@ opt = Adam(lr=0.01, beta_1=0.9, beta_2=0.999, decay=0.01)
 model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
 model.fit(X, y, epochs=100)
 
-def generate_sequences(model, mapping, seq_length, seed_text):
+# third arguement is the sequence length you initialised earlier and seed_text is the text from where you
+# want the model to make prediction of the dinosaur name
+def gen_seq(model, mapping, seq_length, seed_text):
 	in_text = seed_text
 	while in_text[-1] != '\n':
 		encoded = [mapping[char] for char in in_text]
@@ -61,4 +64,5 @@ def generate_sequences(model, mapping, seq_length, seed_text):
 		print(in_text)
 	return in_text
 
-print(generate_sequences(model, mapping, 4, 'gat'))
+
+print(gen_seq(model, mapping, 4, 'gat'))
