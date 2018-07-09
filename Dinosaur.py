@@ -5,7 +5,7 @@ from keras.utils import to_categorical
 from keras.optimizers import Adam
 from keras.preprocessing.sequence import pad_sequences
 import pickle
-
+# akshay is making some change
 Dino = open('/home/kaleeswaran/Desktop/Lstm/Dinosaur.txt','r').read()
 Dino = Dino.lower()
 
