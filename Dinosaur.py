@@ -47,7 +47,7 @@ opt = Adam(lr=0.01, beta_1=0.9, beta_2=0.999, decay=0.01)
 model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
 model.fit(X, y, epochs=100)
 
-# third arguement is the sequence length you initialised earlier and seed_text is the text from where you
+# third argument is the sequence length you initialised earlier and seed_text is the text from where you
 # want the model to make prediction of the dinosaur name
 def gen_seq(model, mapping, seq_length, seed_text):
 	in_text = seed_text
